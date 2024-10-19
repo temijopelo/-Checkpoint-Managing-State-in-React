@@ -33,7 +33,7 @@ function App() {
       setTasks(
         tasks.map((task) =>
           task === taskToEdit
-            ? { ...task, name: newName, description: newDescription }
+            ? { ...task, formName: newName, formDescription: newDescription }
             : task
         )
       );
@@ -47,8 +47,8 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>TO DO APPLICATION</h1>
+    <div className="flex flex-col justify-center items-center">
+      <h1 className="text-3xl font-black p-4">TO DO APPLICATION</h1>
       <Taskform addTask={addTask} />
       <Tasklist
         tasks={tasks}
